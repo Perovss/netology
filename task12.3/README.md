@@ -7,6 +7,6 @@
 4.бекэнд+фронт 5 нод 
 (ОЗУ:2гб,2 ядро, диск 200Гб)
 
-[Ссылка](https://docs.google.com/spreadsheets/d/1WyGJ8teaMunAQI7fCqNTejbPbA9SgbeZTzJ1LfFs3yc/edit?usp=sharing)
+[Ссылка на расчеты](https://docs.google.com/spreadsheets/d/1WyGJ8teaMunAQI7fCqNTejbPbA9SgbeZTzJ1LfFs3yc/edit?usp=sharing)
 
 Для создания кластера необходимо 13 нод, общяя сумма ресурсов (ОЗУ:50гб,26 ядер, диск 2Тб)
