@@ -1,5 +1,5 @@
 2. Задача №2
-Ссылка на манифест
+Ссылка на манифест 
 Pods
 ```
 serge@Lenovo:~/netology/netology/task13.1$ kubectl get pods
