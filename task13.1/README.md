@@ -1,8 +1,35 @@
 1. Задача №1
 Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task1.yaml)
 
+Pods
+```
+serge@Lenovo:~/netology/task13.1$ kubectl get pods
+NAME       READY   STATUS    RESTARTS   AGE
+netology   3/3     Running   0          20s
+```
+Service
+```
+serge@Lenovo:~/netology/task13.1$ kubectl get service
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+db           ClusterIP   10.110.252.186   <none>        5432/TCP   3m44s
+frontend     ClusterIP   10.99.75.139     <none>        8000/TCP   3m44s
+kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP    3d9h
+
+```
+Ingress
+```
+serge@Lenovo:~/netology/task13.1$ kubectl get ingress
+NAME               CLASS    HOSTS          ADDRESS        PORTS   AGE
+frontend-ingress   <none>   help.example   192.168.58.2   80      6m18s
+```
+
+
+**Я не нашел нигде информации как созданный Pod регулируется с помощью deployment и через statefulset. Видимо ошибка в описании задачи**
+
+
 2. Задача №2
 Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task2.yaml)
+
 Pods
 ```
 serge@Lenovo:~/netology/netology/task13.1$ kubectl get pods
