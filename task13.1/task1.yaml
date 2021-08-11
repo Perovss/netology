@@ -12,17 +12,11 @@ spec:
     - name: BASE_URL
       value: "http://localhost:9000"
     image: perovss/frontend
-    ports:
-    - containerPort: 80
-      protocol: TCP
   - name: backend
     image: perovss/backend
     env:
     - name: DATABASE_URL
       value: "postgres://postgres:postgres@db:5432/news"
-    ports:
-    - containerPort: 9000
-      protocol: TCP
   - image: postgres:13-alpine 
     name: postgres
     env:
@@ -32,9 +26,6 @@ spec:
       value: "postgres"
     - name: POSTGRES_DB
       value: "news"
-    ports:
-    - containerPort: 5432
-      protocol: TCP
 ---
 apiVersion: v1
 kind: Service
@@ -82,10 +73,3 @@ spec:
             name: frontend
             port:
               number: 8000
-      - path: /backend
-        pathType: Prefix
-        backend:
-          service:
-            name: backend
-            port:
-              number: 9000

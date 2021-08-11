@@ -24,9 +24,6 @@ frontend-ingress   <none>   help.example   192.168.58.2   80      6m18s
 ```
 
 
-**Я не нашел нигде информации как созданный Pod регулируется с помощью deployment и через statefulset. Видимо ошибка в описании задачи**
-
-
 2. Задача №2
 Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task2.yaml)
 
