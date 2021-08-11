@@ -1,3 +1,6 @@
+1. Задача №1
+Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task1.yaml)
+
 2. Задача №2
 Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task2.yaml)
 Pods
@@ -36,4 +39,3 @@ serge@Lenovo:~/netology/netology/task13.1$ kubectl get statefulsets
 NAME       READY   AGE
 postgres   1/1     50m
 ```
-
