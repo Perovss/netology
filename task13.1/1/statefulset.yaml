@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  namespace: stage
+  name: db
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+        - image: postgres:13-alpine
+          name: db
+          env:
+            - name: POSTGRES_DB
+              value: news
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
