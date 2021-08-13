@@ -80,5 +80,5 @@ frontend-ingress   &lt;none&gt;   netology.example   192.168.58.2   80      5m40
 
 Результат
 
-
+![Результат](task13.1.png)
 
