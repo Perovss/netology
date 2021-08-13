@@ -1,6 +1,5 @@
 1. Задача №1
 Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task1-1.yaml) Pod
-Ссылка на [манифест](https://github.com/Perovss/netology/blob/master/task13.1/task1-2.yaml) Deployment & StatefulSet
 
 
 
