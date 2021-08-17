@@ -19,6 +19,8 @@ spec:
       containers:
       - image: perovss/backend
         name: backend
+        ports:
+        - containerPort: 9000
         env:
         - name: DATABASE_URL
           value: postgres://postgres:postgres@db:5432/news
