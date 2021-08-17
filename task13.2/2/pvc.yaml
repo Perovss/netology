@@ -1,12 +1,13 @@
 ---
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: myPVC
-  spec:
-    storageClassName: "nfs"
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
+  name: my-pvc
+  namespace: stage
+spec:
+  storageClassName: "nfs"
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
       storage: 100Mi

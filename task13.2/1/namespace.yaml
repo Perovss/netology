@@ -2,7 +2,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: stage
-  
-  
-  
-  17A
