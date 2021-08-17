@@ -4,17 +4,17 @@ kind: Deployment
 metadata:
   namespace: stage
   labels:
-    app: backend
+    app: fb
   name: frontend-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: fb
   template:
     metadata:
       labels:
-        app: backend
+        app: fb
     spec:
       containers:
       - image: perovss/frontend

@@ -2,9 +2,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
   labels:
-    app: backend
+    app: fb
   name: frontend
   namespace: stage
 spec:
@@ -13,5 +12,5 @@ spec:
     port: 8000
     targetPort: 80
   selector:
-    app: backend
+    app: fb
   type: ClusterIP

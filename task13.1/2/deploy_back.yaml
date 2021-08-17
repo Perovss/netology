@@ -22,8 +22,6 @@ spec:
         env:
         - name: DATABASE_URL
           value: postgres://postgres:postgres@db:5432/news
-        ports:
-        - containerPort: 9000
       restartPolicy: Always
       initContainers:
       - name: init-postgres
