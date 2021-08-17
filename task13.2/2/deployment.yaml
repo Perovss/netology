@@ -50,7 +50,7 @@ spec:
         image: redis
         volumeMounts:
         - name: my-volume
-          mountPath: /data/static
+          mountPath: /static
       restartPolicy: Always
       volumes:
       - name: my-volume
