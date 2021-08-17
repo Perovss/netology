@@ -9,9 +9,9 @@ metadata:
   namespace: product
 spec:
   ports:
-    - name: postgres
-      port: 5432
-      targetPort: 5432
+  - name: postgres
+    port: 5432
+    targetPort: 5432
   selector:
     app: db
   type: ClusterIP

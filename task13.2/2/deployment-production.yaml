@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: production
+  labels:
+    app: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: nginx
+        volumeMounts:
+        - name: my-volume
+          mountPath: /static
+      restartPolicy: Always
+      volumes:
+      - name: my-volume
+        persistentVolumeClaim:
+          claimName: myPVC
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: production
+  labels:
+    app: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: redis
+        volumeMounts:
+        - name: my-volume
+          mountPath: /data/static
+      restartPolicy: Always
+      volumes:
+      - name: my-volume
+        persistentVolumeClaim:
+          claimName: myPVC

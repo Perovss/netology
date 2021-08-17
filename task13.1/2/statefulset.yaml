@@ -16,12 +16,12 @@ spec:
         app: db
     spec:
       containers:
-        - image: postgres:13-alpine
-          name: db
-          env:
-            - name: POSTGRES_DB
-              value: news
-            - name: POSTGRES_PASSWORD
-              value: postgres
-            - name: POSTGRES_USER
-              value: postgres
+      - image: postgres:13-alpine
+        name: db
+        env:
+        - name: POSTGRES_DB
+          value: news
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: POSTGRES_USER
+          value: postgres

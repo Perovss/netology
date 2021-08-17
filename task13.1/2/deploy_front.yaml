@@ -17,13 +17,13 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: perovss/frontend
-          name: frontend
-          ports:
-            - containerPort: 80
-          env:
-            - name: BASE_URL
-              value: http://backend:9000
+      - image: perovss/frontend
+        name: frontend
+        ports:
+        - containerPort: 80
+        env:
+        - name: BASE_URL
+          value: http://backend:9000
       restartPolicy: Always
       initContainers:
       - name: init-postgres

@@ -8,9 +8,9 @@ metadata:
   namespace: product
 spec:
   ports:
-    - name: backend
-      port: 9000
-      targetPort: 9000
+  - name: backend
+    port: 9000
+    targetPort: 9000
   selector:
     app: backend
   type: ClusterIP
