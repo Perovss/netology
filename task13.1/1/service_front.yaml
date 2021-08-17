@@ -9,9 +9,9 @@ metadata:
   namespace: stage
 spec:
   ports:
-    - name: frontend
-      port: 8000
-      targetPort: 80
+  - name: frontend
+    port: 8000
+    targetPort: 80
   selector:
     app: backend
   type: ClusterIP
