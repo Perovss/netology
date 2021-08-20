@@ -5,6 +5,9 @@
 > * сделайте запросы к фронту;
 > * подключитесь к базе данных.
 
+
+В данной задании используем манифесты с Занятия 13.1 Задание №2
+
 **Frontend EXEC**
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~</b></font>$ kubectl exec frontend-5cf457b7d8-7vzsw -- curl localhost:80
