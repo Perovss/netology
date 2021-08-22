@@ -11,15 +11,15 @@ image:
   frontend:
     repository: perovss/frontend
     pullPolicy: Always
-    tag: ""
+    tag: "lastest"
   backend:
     repository: perovss/frontend
     pullPolicy: Always
-    tag: ""
+    tag: "latest"
   db:
     repository: postgres:13-alpine
     pullPolicy: Always
-    tag: ""
+    tag: "lastest"
 
 imagePullSecrets: []
 nameOverride: ""

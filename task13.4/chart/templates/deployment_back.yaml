@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "chart.fullname" . }} -back
+  name: {{ include "chart.fullname" . }}-backend
   labels:
     {{- include "chart.labels" . | nindent 4 }}
 spec:
@@ -37,7 +37,7 @@ spec:
           imagePullPolicy: {{ .Values.image.backend.pullPolicy }}
           ports:
             - name: backend
-              containerPort: {{ .Values.service.backend }}
+              containerPort: {{ .Values.service.backend.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
