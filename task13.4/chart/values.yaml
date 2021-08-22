@@ -1,14 +1,25 @@
-# Default values for test.
+# Default values for chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount:
+  frontend: 1
+  backend: 1
+  db: 1
 
 image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  frontend:
+    repository: perovss/frontend
+    pullPolicy: Always
+    tag: ""
+  backend:
+    repository: perovss/frontend
+    pullPolicy: Always
+    tag: ""
+  db:
+    repository: postgres:13-alpine
+    pullPolicy: Always
+    tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,20 +48,35 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  frontend:
+    type: ClusterIP
+    port: 80
+    targetPort: 8000
+  backend:
+    type: ClusterIP
+    port: 9000
+    targetPort: 9000
+  db:
+    port: 5432
+    targetPort: 5432
+
+endpoint: 
+  frontend: 80
+  backend: 9000
+  db: 5432
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: netology.example
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          frontend:
+            servicePort: 8000
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -80,3 +106,26 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env:
+  frontend:
+  - name: BASE_URL
+    value: http://backend:9000
+  backend:
+  - name: DATABASE_URL
+    value: postgres://postgres:postgres@db:5432/news 
+  db:
+  - name: POSTGRES_DB
+    value: news
+  - name: POSTGRES_PASSWORD
+    value: postgres
+  - name: POSTGRES_USER
+    value: postgres
+
+labels:
+  frontend:
+    app: frontend
+  backend:
+    app: backend
+  db:
+    app: db
