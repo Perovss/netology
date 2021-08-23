@@ -14,7 +14,6 @@
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task13.4</b></font>$ helm lint chart/
 ==&gt; Linting chart/
 [INFO] Chart.yaml: icon is recommended
-
 1 chart(s) linted, 0 chart(s) failed
 </pre>
 
@@ -22,7 +21,7 @@
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task13.4</b></font>$ helm template netology chart/ &gt;netology.yaml
 </pre>
 
-Скомпилированный манифест
+Скомпилированный [манифест](https://github.com/Perovss/netology/blob/master/task13.4/netology.yaml)
 
 
 ## Задание 2: запустить 2 версии в разных неймспейсах
