@@ -13,7 +13,7 @@ openssl req -x509 -new -key cert.key -days 3650 -out cert.crt \
 -subj '/C=RU/ST=Moscow/L=Moscow/CN=server.local'
 kubectl create secret tls domain-cert --cert=certs/cert.crt --key=certs/cert.key
 ```
-## **Ответ**
+## **Решение**
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ openssl genrsa -out cert.key 4096
 Generating RSA private key, 4096 bit long modulus (2 primes)
@@ -32,7 +32,7 @@ secret/domain-cert created
 kubectl get secrets
 kubectl get secret
 ```
-## **Ответ**
+## **Решение**
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl get secrets
 NAME                                            TYPE                                  DATA   AGE
 default-token-szmgj                             kubernetes.io/service-account-token   3      16d
@@ -53,7 +53,7 @@ sh.helm.release.v1.nfs-server.v1                helm.sh/release.v1              
 kubectl get secret domain-cert
 kubectl describe secret domain-cert
 ```
-## **Ответ**
+## **Решение**
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl get secret domain-cert
 NAME          TYPE                DATA   AGE
 domain-cert   kubernetes.io/tls   2      5m41s
@@ -78,7 +78,7 @@ tls.key:  3243 bytes
 kubectl get secret domain-cert -o yaml
 kubectl get secret domain-cert -o json
 ```
-## **Ответ**
+## **Решение**
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl get secret domain-cert -o yaml
 apiVersion: v1
 data:
@@ -118,7 +118,7 @@ type: kubernetes.io/tls
 kubectl get secrets -o json > secrets.json
 kubectl get secret domain-cert -o yaml > domain-cert.yml
 ```
-## **Ответ**
+## **Решение**
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl get secrets -o json &gt; secrets.json
 <font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl get secret domain-cert -o yaml &gt; domain-cert.yml
 <font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ ls -la
@@ -136,7 +136,7 @@ drwxr-xr-x 93 serge serge 12288 авг 24 16:20 <font color="#12488B"><b>..</b><
 ```
 kubectl delete secret domain-cert
 ```
-## **Ответ**
+## **Решение**
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl delete secret domain-cert
 secret &quot;domain-cert&quot; deleted</pre>
 
@@ -145,7 +145,7 @@ secret &quot;domain-cert&quot; deleted</pre>
 ```
 kubectl apply -f domain-cert.yml
 ```
-## **Ответ**
+## **Решение**
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/cert</b></font>$ kubectl apply -f domain-cert.yml
 secret/domain-cert created
 </pre>

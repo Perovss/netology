@@ -8,6 +8,8 @@
 > kubectl apply -f 14.2/vault-pod.yml
 > ```
 
+##**Решение**
+
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task14.2</b></font>$ kubectl apply -f 14.2/vault-pod.yml
 pod/14.2-netology-vault created
 </pre>
@@ -19,6 +21,8 @@ pod/14.2-netology-vault created
 > ```
 > 
 > Примечание: jq - утилита для работы с JSON в командной строке
+
+##**Решение**
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task14.2</b></font>$ kubectl get pod 14.2-netology-vault -o json | jq -c &apos;.status.podIPs&apos;
 <b>[{</b><font color="#12488B"><b>&quot;ip&quot;</b></font><b>:</b><font color="#26A269">&quot;172.17.0.14&quot;</font><b>}]</b>
@@ -36,6 +40,8 @@ pod/14.2-netology-vault created
 > dnf -y install pip
 > pip install hvac
 > ```
+
+##**Решение**
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task14.2</b></font>$ kubectl run -i --tty fedora --image=fedora --restart=Never -- sh
 If you don&apos;t see a command prompt, try pressing enter.
@@ -128,6 +134,8 @@ sh-5.1# </pre>
 >     path='hvac',
 > )
 > ```
+
+##**Решение**
 
 <pre>&gt;&gt;&gt; import hvac
 &gt;&gt;&gt; client = hvac.Client(
