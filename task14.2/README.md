@@ -128,6 +128,7 @@ sh-5.1# </pre>
 >     path='hvac',
 > )
 > ```
+
 <pre>&gt;&gt;&gt; import hvac
 &gt;&gt;&gt; client = hvac.Client(
 ...     url=&apos;http://172.17.0.14:8200&apos;,
@@ -150,3 +151,4 @@ True
 {&apos;request_id&apos;: &apos;bd66b893-c57b-5a9c-e97b-2c5a2d2301ac&apos;, &apos;lease_id&apos;: &apos;&apos;, &apos;renewable&apos;: False, &apos;lease_duration&apos;: 0, &apos;data&apos;: {&apos;data&apos;: {&apos;netology&apos;: &apos;Big secret!!!&apos;}, &apos;metadata&apos;: {&apos;created_time&apos;: &apos;2021-08-24T14:23:43.059809621Z&apos;, &apos;deletion_time&apos;: &apos;&apos;, &apos;destroyed&apos;: False, &apos;version&apos;: 4}}, &apos;wrap_info&apos;: None, &apos;warnings&apos;: None, &apos;auth&apos;: None}
 &gt;&gt;&gt; </pre>
 
+###Код проверки прошел успешно
