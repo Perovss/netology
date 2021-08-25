@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2021-08-25T13:40:30Z"
+  name: netology
+  namespace: default
+  resourceVersion: "2589"
+  uid: c4cab2ea-74bb-47a6-bda1-71d33633f98a
+secrets:
+- name: netology-token-8hvtf
