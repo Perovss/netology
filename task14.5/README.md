@@ -24,3 +24,11 @@ security-context-demo
 <font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task14.5/14.5</b></font>$ kubectl logs security-context-demo 
 uid=1000 gid=3000 groups=3000
 </pre>
+
+##Задача 2 (*): Рассмотрите пример 14.5/example-network-policy.yml
+> ```
+> Создайте два модуля. Для первого модуля разрешите доступ к внешнему миру и ко второму контейнеру. Для второго модуля > разрешите связь только с первым контейнером. Проверьте корректность настроек.
+> ```
+
+
+kubectl -n test describe pods | grep -E "(^Name:|^IP:)"
