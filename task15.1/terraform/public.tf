@@ -37,7 +37,6 @@ resource "aws_instance" "instance1" {
   instance_type = "t2.micro"
   key_name  = aws_key_pair.my_key.key_name
   count = 1
-
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
   security_groups = [ aws_security_group.netology-sg.id ]
