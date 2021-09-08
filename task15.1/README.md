@@ -1,3 +1,5 @@
+#[Все файлы задания](https://github.com/Perovss/netology/tree/master/task15.1)
+
 # Домашнее задание к занятию "15.1. Организация сети"
 
 Настроить Production like сеть в рамках одной зоны с помощью terraform. Модуль VPC умеет автоматически делать все что есть в этом задании. Но мы воспользуемся более низкоуровневыми абстракциями, чтобы понять, как оно устроено внутри.
@@ -9,7 +11,7 @@
 
 # Решение
 
-[Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/main.tf)
+Создаем [манифест main.tf](https://github.com/Perovss/netology/blob/master/task15.1/terraform/main.tf)
 
 # 2. Публичная сеть.
 
@@ -19,7 +21,9 @@
 
 # Решение
 
-[Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/public.tf)
+Создаем [манифест public.tf](https://github.com/Perovss/netology/blob/master/task15.1/terraform/public.tf)
+
+Проверяем в созданном инстансе доступ к интернету
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task15.1/terraform/certificates</b></font>$ ssh -i my-key.key ubuntu@13.58.36.240 
 Warning: Identity file my-key.key not accessible: No such file or directory.
@@ -74,7 +78,7 @@ rtt min/avg/max/mdev = 107.999/108.274/108.884/0.356 ms
 
 # Решение
 
-[Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/private.tf)
+Создаем [манифест private.tf](https://github.com/Perovss/netology/blob/master/task15.1/terraform/private.tf)
 
 # 4. VPN.
 
@@ -85,9 +89,11 @@ rtt min/avg/max/mdev = 107.999/108.274/108.884/0.356 ms
 
 # Решение
 
-[Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/vpn.tf)
+Создаем [манифест vpn.tf](https://github.com/Perovss/netology/blob/master/task15.1/terraform/vpn.tf)
 
-[Конфигурационный файл openVPN](https://github.com/Perovss/netology/blob/master/task15.1/config.ovpn)
+Для подключения создаем [конфигурационный файл openVPN](https://github.com/Perovss/netology/blob/master/task15.1/config.ovpn)
+
+Проверяем подключение через SSH и доступ к интернет через виртуалку
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task15.1/terraform</b></font>$ ssh -i my_key ubuntu@172.31.65.126
 Warning: Identity file my_key not accessible: No such file or directory.
@@ -140,6 +146,9 @@ PING ya.ru (87.250.250.242) 56(84) bytes of data.
 rtt min/avg/max/mdev = 108.622/108.743/109.012/0.136 ms
 <font color="#26A269"><b>ubuntu@ip-172-31-65-126</b></font>:<font color="#12488B"><b>~</b></font>$ 
 </pre>
+
+[Все файлы задания](https://github.com/Perovss/netology/tree/master/task15.1)
+
 
 * * *
 
