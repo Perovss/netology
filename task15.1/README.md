@@ -2,22 +2,22 @@
 
 Настроить Production like сеть в рамках одной зоны с помощью terraform. Модуль VPC умеет автоматически делать все что есть в этом задании. Но мы воспользуемся более низкоуровневыми абстракциями, чтобы понять, как оно устроено внутри.
 
-#1. Создать VPC.
+# 1. Создать VPC.
 
->- Используя vpc-модуль terraform, создать пустую VPC с подсетью 172.31.0.0/16.
->- Выбрать регион и зону.
->
+> - Используя vpc-модуль terraform, создать пустую VPC с подсетью 172.31.0.0/16.
+> - Выбрать регион и зону.
 
-#Решение
+
+# Решение
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/main.tf)
 
-#2. Публичная сеть.
+# 2. Публичная сеть.
 
 > - Создать в vpc subnet с названием public, сетью 172.31.32.0/19 и Internet gateway.
 > - Добавить RouteTable, направляющий весь исходящий трафик в Internet gateway.
 > - Создать в этой приватной сети виртуалку с публичным IP и подключиться к ней, убедиться что есть доступ к интернету.
 
-#Решение
+# Решение
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/public.tf)
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task15.1/terraform/certificates</b></font>$ ssh -i my-key.key ubuntu@13.58.36.240 
@@ -42,8 +42,6 @@ Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1017-aws x86_64)
 1 update can be applied immediately.
 To see these additional updates run: apt list --upgradable
 
-
-
 The programs included with the Ubuntu system are free software;
 the exact distribution terms for each program are described in the
 individual files in /usr/share/doc/*/copyright.
@@ -60,29 +58,29 @@ PING ya.ru (87.250.250.242) 56(84) bytes of data.
 64 bytes from ya.ru (87.250.250.242): icmp_seq=2 ttl=228 time=108 ms
 64 bytes from ya.ru (87.250.250.242): icmp_seq=3 ttl=228 time=109 ms
 64 bytes from ya.ru (87.250.250.242): icmp_seq=4 ttl=228 time=108 ms
-^C
+
 --- ya.ru ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3004ms
 rtt min/avg/max/mdev = 107.999/108.274/108.884/0.356 ms
 <font color="#26A269"><b>ubuntu@ip-172-31-62-56</b></font>:<font color="#12488B"><b>~</b></font>$ 
 </pre>
 
-#3. Приватная сеть.
+# 3. Приватная сеть.
 > - Создать в vpc subnet с названием private, сетью 172.31.96.0/19.
 > - Добавить NAT gateway в public subnet.
 > - Добавить Route, направляющий весь исходящий трафик private сети в NAT.
 
-#Решение
+# Решение
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/private.tf)
 
-#4. VPN.
+# 4. VPN.
 
 > - Настроить VPN, соединить его с сетью private.
 > - Создать себе учетную запись и подключиться через нее.
 > - Создать виртуалку в приватной сети.
 > - Подключиться к ней по SSH по приватному IP и убедиться, что с виртуалки есть выход в интернет.
 
-#Решение
+#Р ешение
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.1/terraform/vpn.tf)
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task15.1/terraform</b></font>$ ssh -i my_key ubuntu@172.31.65.126
@@ -139,17 +137,14 @@ rtt min/avg/max/mdev = 108.622/108.743/109.012/0.136 ms
 <font color="#26A269"><b>ubuntu@ip-172-31-65-126</b></font>:<font color="#12488B"><b>~</b></font>$ 
 </pre>
 
-
 * * *
-
-
 
 >Документация по AWS-ресурсам:
 >
->- [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html)
+> - [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html)
 >
 >Модули terraform
 >
->- [VPC](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc)
->- [Subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet)
->- [Internet Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway)
+> - [VPC](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc)
+> - [Subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet)
+> - [Internet Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway)
