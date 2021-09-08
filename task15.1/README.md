@@ -93,7 +93,7 @@ rtt min/avg/max/mdev = 107.999/108.274/108.884/0.356 ms
 
 Для подключения создаем [конфигурационный файл openVPN](https://github.com/Perovss/netology/blob/master/task15.1/config.ovpn)
 
-Проверяем подключение через SSH и доступ к интернет через виртуалку
+Проверяем подключение через SSH к инстансу и доступ к интернет через виртуалку 
 
 <pre><font color="#26A269"><b>serge@serge</b></font>:<font color="#12488B"><b>~/netology/task15.1/terraform</b></font>$ ssh -i my_key ubuntu@172.31.65.126
 Warning: Identity file my_key not accessible: No such file or directory.
