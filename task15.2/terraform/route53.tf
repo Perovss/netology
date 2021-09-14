@@ -6,10 +6,10 @@ resource "aws_route53_zone" "private" {
   }
 }
 
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.private.zone_id
-  name    = "abracadabra.ru"
-  type    = "CNAME"
-  ttl     = "300"
-  records = [aws_elb.netology-elb.dns_name]
-}
+# resource "aws_route53_record" "www" {
+#   zone_id = aws_route53_zone.private.zone_id
+#   name    = "abracadabra.ru"
+#   type    = "CNAME"
+#   ttl     = "300"
+#   records = [aws_elb.netology-elb.dns_name]
+# }
