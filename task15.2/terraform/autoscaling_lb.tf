@@ -27,8 +27,8 @@ resource "aws_launch_configuration" "as_conf" {
   }
 }
 
-resource "aws_elb" "netology-elb" {
-  name               = "netology-elb"
+resource "aws_elb" "elb-perovss" {
+  name               = "elb-perovss"
   subnets = [aws_subnet.public.id]
 
   listener {
@@ -54,12 +54,8 @@ resource "aws_elb" "netology-elb" {
   connection_draining_timeout = 400
 
   tags = {
-    Name = "netology-elb"
+    Name = "elb-perovss"
   }
-}
-
-output "classic-balancer-dns_name" {
-  value = "${aws_elb.netology-elb.dns_name}"
 }
 
 resource "aws_autoscaling_group" "netology-autoscaling" {
@@ -70,7 +66,7 @@ resource "aws_autoscaling_group" "netology-autoscaling" {
 
   vpc_zone_identifier  = [aws_subnet.public.id]
 
-  load_balancers = [aws_elb.netology-elb.id]
+  load_balancers = [aws_elb.elb-perovss.id]
 
   lifecycle {
     create_before_destroy = true

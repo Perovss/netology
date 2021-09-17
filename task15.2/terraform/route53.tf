@@ -11,5 +11,8 @@ resource "aws_route53_record" "www" {
   name    = "www.perovss-netology.com"
   type    = "CNAME"
   ttl     = "300"
-  records = [aws_elb.netology-elb.dns_name]
+  records = [aws_elb.elb-perovss.dns_name]
+}
+output "load_balancer_name" {
+  value = "${aws_elb.elb-perovss.dns_name}"
 }
