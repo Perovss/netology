@@ -11,7 +11,9 @@
 > - Сделать доступным из VPN используя ACL.
 
 # Решение
-Создаем бакет в S3 
+
+Создаем бакет в S3
+
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.2/terraform/s3_bucket.tf)
 [Картинка](https://github.com/Perovss/netology/blob/master/task15.2/terraform/files/netology.jpg)
 ---
@@ -21,7 +23,9 @@
 > - Сделать запись в Route53 на приватный домен, указав адрес LB.
 
 # Решение
+
 Создаем запись в Route53
+
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.2/terraform/route53.tf)
 
 ---
@@ -37,7 +41,7 @@
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.2/terraform/autoscaling_lb.tf)
 [Скрипт](https://github.com/Perovss/netology/blob/master/task15.2/terraform/files/bootstrap.tmpl)
 
-На выходе получаем изображение 
+На выходе получаем изображение
 
 ![1](https://github.com/Perovss/netology/blob/master/task15.2/pic1.png)
 ![2](https://github.com/Perovss/netology/blob/master/task15.2/pic2.png)
