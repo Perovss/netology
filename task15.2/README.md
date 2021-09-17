@@ -16,6 +16,7 @@
 
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.2/terraform/s3_bucket.tf)
 [Картинка](https://github.com/Perovss/netology/blob/master/task15.2/terraform/files/netology.jpg)
+
 ---
 
 ## Задание 2. Создать запись в Route53 домен с возможностью определения из VPN.
@@ -37,6 +38,7 @@
 
 
 # Решение
+
 Создаем группуAutoscaling и правила для файрвола, шаблон инстансов и classic LB
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.2/terraform/autoscaling_lb.tf)
 [Скрипт](https://github.com/Perovss/netology/blob/master/task15.2/terraform/files/bootstrap.tmpl)
