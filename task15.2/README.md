@@ -33,5 +33,10 @@
 [Манифест](https://github.com/Perovss/netology/blob/master/task15.2/terraform/autoscaling_lb.tf)
 
 # Решение
+![1](https://github.com/Perovss/netology/blob/master/task15.2/pic1.png)
+![2](https://github.com/Perovss/netology/blob/master/task15.2/pic2.png)
+![3](https://github.com/Perovss/netology/blob/master/task15.2/pic3.png)
+
+
 
 [Все файлы задания](https://github.com/Perovss/netology/tree/master/task15.2)
