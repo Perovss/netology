@@ -8,7 +8,7 @@ resource "aws_security_group_rule" "http" {
 }
 
 data "template_file" "bootstrap" {
-  template = "${file("bootstrap.tmpl")}"
+  template = "${file("files/bootstrap.tmpl")}"
   vars = {
     url = data.aws_s3_bucket.b.bucket_domain_name
     file = data.aws_s3_bucket_object.img.key
@@ -62,8 +62,8 @@ output "classic-balancer-dns_name" {
   value = "${aws_elb.netology-elb.dns_name}"
 }
 
-resource "aws_autoscaling_group" "netology-asg" {
-  name                 = "netology-asg"
+resource "aws_autoscaling_group" "netology-autoscaling" {
+  name                 = "netology-autoscaling"
   launch_configuration = aws_launch_configuration.as_conf.name
   min_size             = 3
   max_size             = 6

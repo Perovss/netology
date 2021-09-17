@@ -5,4 +5,4 @@ service httpd start
 chkconfig httpd on
 cd /var/www/html
 wget https://${url}/${file} || true
-echo "<html><h1>Hello Devops</h1><img src="https://serge-bucket.s3.us-east-2.amazonaws.com/netology.jpg></html>" > index.html
+echo "<html><h1>Hello Devops</h1><img src="https://${url}/${file}></html>" > index.html
