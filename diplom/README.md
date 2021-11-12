@@ -137,4 +137,4 @@
 
 Установлена последняя стабильная версия [Terraform](https://www.terraform.io/).
 
-![terraform](/home/serge/terraform.png)
+![terraform](terraform.png)
